@@ -1,20 +1,38 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { useFonts } from "expo-font";
+import MButtercupCart from "./Screens/MButtercupCart";
 
-export default function App() {
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { View, Text, Pressable, TouchableOpacity } from "react-native";
+
+const App = () => {
+  const Stack = createNativeStackNavigator();
+  const [hideSplashScreen, setHideSplashScreen] = React.useState(true);
+  // const [fontsLoaded, error] = useFonts({
+  //   "Inter-Regular": require("./assets/fonts/Inter-Regular.ttf"),
+  //   "Inter-Medium": require("./assets/fonts/Inter-Medium.ttf"),
+  //   "Anton-Regular": require("./assets/fonts/Anton-Regular.ttf"),
+  // });
+
+  // if (!fontsLoaded && !error) {
+  //   return null;
+  // }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <NavigationContainer>
+        {hideSplashScreen ? (
+          <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Screen
+              name="MButtercupCart"
+              component={MButtercupCart}
+              options={{ headerShown: false }}
+            />
+          </Stack.Navigator>
+        ) : null}
+      </NavigationContainer>
+    </>
   );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+};
+export default App;
