@@ -22,16 +22,22 @@ Before you begin, ensure you have met the following requirements:
    git clone https://github.com/yourusername/your-app-name.git
 
 Navigate to the project directory:
+```sh
 cd your-app-name
+```
 
 Install the project dependencies:
+```sh
 npm install
+```
 
 Running the App
 To run the app on your local development server, follow these steps:
 
 Start the development server:
+```sh
 npm start
+```
 
 This will open the Expo DevTools in your default web browser.
 
