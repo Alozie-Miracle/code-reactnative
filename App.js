@@ -7,23 +7,25 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { View, Text, Pressable, TouchableOpacity } from "react-native";
 
 const App = () => {
+  // Create a stack navigator for navigation within the app
   const Stack = createNativeStackNavigator();
-  const [hideSplashScreen, setHideSplashScreen] = React.useState(true);
-  // const [fontsLoaded, error] = useFonts({
-  //   "Inter-Regular": require("./assets/fonts/Inter-Regular.ttf"),
-  //   "Inter-Medium": require("./assets/fonts/Inter-Medium.ttf"),
-  //   "Anton-Regular": require("./assets/fonts/Anton-Regular.ttf"),
-  // });
 
-  // if (!fontsLoaded && !error) {
-  //   return null;
-  // }
+  // Use state to control whether to hide the splash screen
+  const [hideSplashScreen, setHideSplashScreen] = React.useState(true);
+
+  // Load custom fonts using the expo-font library
+  const [loaded] = useFonts({
+    // Specify the fonts you want to load
+    // Example: 'your-custom-font': require('./path-to-font.ttf'),
+  });
 
   return (
     <>
       <NavigationContainer>
+        {/* Conditionally render the splash screen */}
         {hideSplashScreen ? (
           <Stack.Navigator screenOptions={{ headerShown: false }}>
+            {/* Create a screen with no header for your main content */}
             <Stack.Screen
               name="MButtercupCart"
               component={MButtercupCart}
