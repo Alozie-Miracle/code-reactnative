@@ -1,10 +1,10 @@
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
-import MButtercupCart from "./Screens/MButtercupCart";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { View, Text, Pressable, TouchableOpacity } from "react-native";
+import MButtercupCart from "./Screens/MBttercupCart";
 
 const App = () => {
   // Create a stack navigator for navigation within the app

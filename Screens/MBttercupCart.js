@@ -129,7 +129,8 @@ const MButtercupCart = () => {
           </View>
         </View>
       </View>
-      <View style={[styles.mPrimaryNav, styles.mButtonPillFlexBox]}>
+      {/* this images (hamburger, wordmark, basket) has to be download and imported into the app */}
+      {/* <View style={[styles.mPrimaryNav, styles.mButtonPillFlexBox]}>
         <Image
           style={styles.iconLayout}
           source={require("../assets/Hamburger.png")}
@@ -142,7 +143,7 @@ const MButtercupCart = () => {
           style={styles.iconLayout}
           source={require("../assets/Basket.png")}
         />
-      </View>
+      </View> */}
     </View>
   );
 };
